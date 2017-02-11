@@ -1,0 +1,23 @@
+{
+  "generator-fountain-vue": {
+    "version": "1.0.0-rc2",
+    "props": {
+      "framework": "vue",
+      "modules": "webpack",
+      "js": "babel",
+      "ci": [
+        "travis"
+      ],
+      "css": "scss",
+      "resolved": "/usr/lib/node_modules/generator-fountain-webapp/node_modules/generator-fountain-vue/generators/app/index.js",
+      "namespace": "fountain-vue",
+      "argv": {
+        "remain": [],
+        "cooked": [],
+        "original": []
+      },
+      "sample": "hello",
+      "router": "router"
+    }
+  }
+}
