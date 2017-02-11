@@ -11,7 +11,9 @@
         Singapore.
       </p>
       <p>
-        <button class="btn btn-primary">Go to the bicycle parking map</button>
+        <router-link class="btn btn-primary" to="/parking">
+          Go to the bicycle parking map
+        </router-link>
       </p>
     </div>
   </div>
