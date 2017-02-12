@@ -27,7 +27,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         loaders: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?minimize!sass-loader!postcss-loader'
+          loader: 'css-loader!sass-loader!postcss-loader'
         })
       },
       {
@@ -42,7 +42,12 @@ module.exports = {
         loaders: [
           'vue-loader'
         ]
-      }
+      },
+      {test: /\.png$/, loader: "file-loader"},
+      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"},
+      {test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000"},
+      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream"},
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml"}
     ]
   },
   plugins: [
