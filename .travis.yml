@@ -1,3 +1,13 @@
 language: node_js
 node_js:
   - 'stable'
+services:
+  - docker
+script: npm run build
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - export REPO=leward/sg-cycling-project-front
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - docker build -t $REPO:$TRAVIS_COMMIT .
+  - docker tag $REPO:$TRAVIS_COMMIT $REPO:$TAG
+  - docker push $REPO:$TAG
